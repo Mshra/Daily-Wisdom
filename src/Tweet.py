@@ -36,4 +36,4 @@ def tweet():
             break
         except:
             print('error tweeting')
-    print('quote tweeted')
+    return randomQuote

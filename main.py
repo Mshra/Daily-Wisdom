@@ -1,6 +1,15 @@
 import sys
+from flask import Flask
 sys.path.append('src')
 from Tweet import tweet
 
-if __name__ == "__main__":
-    tweet()
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return f"hello"
+
+@app.route('/tweet')
+def post():
+    t = tweet()
+    return t
