@@ -12,3 +12,4 @@ def index():
 @app.route('/tweet')
 def post():
     tweet()
+    return 'tweeted'
