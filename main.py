@@ -11,5 +11,4 @@ def index():
 
 @app.route('/tweet')
 def post():
-    t = tweet()
-    return t
+    tweet()
