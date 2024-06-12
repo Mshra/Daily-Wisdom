@@ -27,12 +27,10 @@ client = tweepy.Client(
 )
 
 def tweet():
-    while True:
-        try:
-            randomQuote = db.getRandomQuote()
-            quote = randomQuote['quote']
-            author = randomQuote['author']
-            client.create_tweet(text=f"{quote}\n-{author}")
-            break
-        except:
-            print('error tweeting')
+    try:
+        randomQuote = db.getRandomQuote()
+        quote = randomQuote['quote']
+        author = randomQuote['author']
+        client.create_tweet(text=f"{quote}\n-{author}")
+    except:
+        tweet()
